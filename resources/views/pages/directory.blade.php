@@ -27,7 +27,7 @@
     </div>
     <div class="container">
         @if(isset($tools))
-            <table class="table table-bordered table-inverse directory">
+            <table class="table table-bordered table-inverse table-fixed directory">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -42,13 +42,16 @@
                 @foreach($tools as $tool)
                     <tr>
                         <td>{{ $tool->name }}</td>
-                        <td><a href="{{ $tool->website }}">{{ str_limit($tool->website, 20) }}</a></td>
-                        <td><a href="{{ $tool->download }}">{{ str_limit($tool->download, 20) }}</a></td>
+                        <td><a data-toggle="tooltip" title="{{ $tool->website }}"
+                               href="{{ $tool->website }}">{{ str_limit($tool->website, 20) }}</a></td>
+                        <td><a data-toggle="tooltip" title="{{ $tool->download }}"
+                               href="{{ $tool->download }}">{{ str_limit($tool->download, 20) }}</a></td>
                         <td>
                             @if($tool->github == 'None')
                                 ?
                             @else
-                                <a href="{{ $tool->github }}">{{ str_limit($tool->github, 10) }}</a>
+                                <a data-toggle="tooltip" title="{{ $tool->github }}"
+                                   href="{{ $tool->github }}">{{ str_limit($tool->github, 10) }}</a>
                             @endif
                         </td>
                         <td>{{ $tool->sha256 }}</td>

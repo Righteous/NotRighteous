@@ -19,8 +19,6 @@ class ExifController extends Controller
         $fileName = str_random(6) . '.' . $request->file('userfile')->getClientOriginalExtension();
         $request->file('userfile')->move(public_path('images'), $fileName);
         $before = $this->getExif($fileName);
-        unset($before[0]);
-        unset($before[3]);
         $this->strip($fileName);
         $after = $this->getExif($fileName);
         $info = 'Link: ' . $this->getLocalUpload($fileName);

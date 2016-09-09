@@ -11,7 +11,9 @@
         "miljar/php-exif": "v0.6.1",
         "ptcong/php-image-uploader": "6.0.3",
         "miroc/laravel-adminer": "4.2.4",
-        "awjudd/feed-reader": "1.3.0"
+        "awjudd/feed-reader": "1.3.0",
+        "barryvdh/laravel-ide-helper": "v2.2.0",
+        "s-ichikawa/laravel-sendgrid-driver": "1.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

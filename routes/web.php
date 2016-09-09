@@ -17,3 +17,7 @@ Route::get('feed',
     ['as' => 'feed', 'uses' => 'InfosecRssController@create']);
 
 Route::any('adminer', '\Miroc\LaravelAdminer\AdminerController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
